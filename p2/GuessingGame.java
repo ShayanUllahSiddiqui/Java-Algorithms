@@ -1,27 +1,27 @@
 package p2;
-import java.util.Random;
 import java.util.Scanner;
+import java.util.Random;
+
 
 public class GuessingGame {
-    
-    private int randomNumber; 
     private int Guess; 
-    private int Random1, Random2, Random3;
-    private int Guess1, Guess2, Guess3;
+    private int randomNumber; 
     private int Count;
-
+    private int Guess1, Guess2, Guess3;
+    private int Random1, Random2, Random3;
+    
     public void numGenerate()
     {
-             Random1 = (randomNumber)/100;
-             Random2 = (randomNumber%100)/10;
              Random3 = (randomNumber%100)%10;
+             Random2 = (randomNumber%100)/10;
+             Random1 = (randomNumber)/100;
     }  
 
 
     public void play()
     {
-        System.out.println("Welcome To The Fermi Game.");
-        System.out.println("A secret 3 digit number has been generated. Can you guess what it is?");
+        System.out.println("Khushaamdid To Fermi Game.");
+        System.out.println("A number is been generated which we are keeping as a secret, come on let's guess what it will?");
         System.out.println("Guess The Number: ");
         System.out.println(randomNumber);
         
@@ -90,16 +90,17 @@ public class GuessingGame {
     }
     public void Win()
     {
-        System.out.println("You Guessed It!");
-        System.out.println("Number of Guesses made: "+Count);
+        System.out.println("What an imressive guess mate!!!");
+        System.out.println("Amount of guesses made so far: "+Count);
     }
     
     public static void main(String[] args) 
     {
         Scanner sc = new Scanner(System.in);
-        Random ranNum = new Random();
-        GuessingGame Game = new GuessingGame();
         int playAgain = 1;
+        GuessingGame Game = new GuessingGame();
+        Random ranNum = new Random();
+        
         
         while(playAgain == 1)
         {
@@ -114,7 +115,7 @@ public class GuessingGame {
                 Game.Hint();
             }
             Game.Win();
-            System.out.println("Do You Want To Play Again? Press 1 to play again. Press 0 to Exit. ");
+            System.out.println("want to rock and roll again? Press 1 to play one more time. Press 0 to way out. ");
             playAgain = sc.nextInt();
         }
     }
